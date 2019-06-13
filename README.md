@@ -21,12 +21,12 @@ Things you may want to cover:
 |------|----|-------|
 |name|text|null: false|
 |email|varchar(255)|null: false|
-|users_groups_id|int|foreign_key: true|
 
 ##### 上記に加え、password関連とtimestampsも用意。
 ##### timestampsは下記のテーブルに全て用意。
 
 ### Association
+- has_many :users_groups
 - has_many :groups, through :users_groups
 - has_many :messages
 
@@ -35,9 +35,10 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|users_groups_id|int|foreign_key: true|
+|name|text|null: false|
 
 ### Association
+- has_many :users_groups
 - has_many :users, through :users_groups
 - has_many :messages
 
