@@ -13,6 +13,8 @@ Things you may want to cover:
 
 * Database creation
 
+# DB設計
+
 ## usersテーブル
 
 |Column|Type|Options|
@@ -64,6 +66,8 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :group
+
+
 
 * Database initialization
 
