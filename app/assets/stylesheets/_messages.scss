@@ -1,5 +1,7 @@
+$light-blue: #38aef0;
+
 .alert {
-  background-color: #38aef0;
+  background-color: $light-blue;
   color: white;
   margin: 0 auto;
   text-align: center;
@@ -26,11 +28,19 @@
         &__menu {
           display: flex;
           margin-left: auto;
+          list-style: none;
+          &__btn {
+            margin-left: 5px;
+            &__link {
+            text-decoration: none;
+            color: white;
+            }
+          }
         }
       }
     }
     &-groups {
-      height: calc( 100vh - 120px );
+      height: calc( 100vh - 100px );
       background-color: #2f3e51;
       padding: 20px 20px 0;
       .side-group {
@@ -53,7 +63,6 @@
   .main {
     height: 100vh;
     width: calc( 100vw - 300px );
-    box-sizing: border-box;
     &-header {
       // 仮の高さ
       height: 100px;
@@ -80,13 +89,13 @@
         height: 40px;
         margin-top: 28px; 
         padding: 0 20px;
-        border: 1px solid #38aef0;
-        color: #38aef0;
+        border: 1px solid $light-blue;
+        color: $light-blue;
         line-height: 40px;
       }
     }
     &-messages {
-      height: calc( 100vh - 100px - 90px - 46px );
+      height: calc( 100vh - 100px - 90px );
       padding: 46px 40px 0;
       background-color: #fafafa;
       overflow-y: scroll;
@@ -112,43 +121,59 @@
           color: #434a54;
         }
         &__image {
-          background-color: red;
-          height: 80px;
-          width: 100px;         
+          // imageの大きさは仮
+          height: 150px;
+          width: 200px;         
         }
       }
     }
     &-form {
-      height: 50px;
-      width: calc( 100vw - 300px - 80px );
+      height: 90px;
+      width: calc( 100vw - 300px );
       padding: 20px 40px;
       position: fixed;
       bottom: 0;
       background-color: #dddddd;
-      display: flex;
-      justify-content: space-between;
       &__message {
-        width: 100%;
-        padding: 0 10px;
-        background-color: white;
+        height: 50px;
         display: flex;
-        align-items: center;
-        &__text {
-          // 入力フォームに変更
+        &__box {
+          flex-grow: 1;
+          display: flex;
+          align-items: center;
+          position: relative;
+          &__text {
+            width: 100%;
+            height: 50px;
+            padding: 0 40px 0 10px;
+            border: none;
+          }
+          &__image {
+            position: absolute;
+            right: 0;
+            height: 30px;
+            width: 30px;
+            &__icon {
+              width: 20px;
+              font-size: 1.4em;
+              line-height: 30px;
+            }
+            &__icon:hover {
+              cursor: pointer;
+            }
+            &__file {
+              display: none;
+            }
+          } 
         }
-        &__image {
-          margin-left: auto;
-          cursor: pointer;
-          height: 30px;
-          width: 30px;
-        } 
-      }
-      &__send-btn {
-        padding: 0 30px;
-        margin-left: 15px;
-        background-color: #38aef0;
-        color: white;
-        line-height: 50px;
+        &__send-btn {
+          padding: 0 30px;
+          margin-left: 15px;
+          background-color: $light-blue;
+          color: white;
+          line-height: 50px;
+          font-size: 16px;
+        }
       }
     }
   }

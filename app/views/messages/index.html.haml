@@ -5,25 +5,16 @@
     .side-header
       .side-header__box
         %p.side-header__box__user-name
-          yohei
+          User Name
         %ul.side-header__box__menu
-          %li.side-header__box__menu--make-group
-            = link_to "/" do
-              = fa_icon 'edit', class: 'icon'
-          %li.side-header__box__menu--edit-account
-            = link_to "/" do
-              = fa_icon 'cog', class: 'icon'
+          %li.side-header__box__menu__btn
+            = link_to "/", class: "side-header__box__menu__btn__link side-header__box__menu__btn__link--make-group" do
+              = fa_icon "edit", class: "side-header__box__menu__btn__link--make-group-icon"
+          %li.side-header__box__menu__btn
+            = link_to "/", class: "side-header__box__menu__btn__link side-header__box__menu__btn__link--edit-account" do
+              = fa_icon "cog", class: "side-header__box__menu__btn__link--edit-account-icon"
     .side-groups
-      .side-group
-        .side-group__name
-          新しいグループ
-        .side-group__message
-          新しいコメント
-      .side-group
-        .side-group__name
-          新しいグループ
-        .side-group__message
-          新しいコメント
+      = render partial: "side-group"  #locals: { group: group }
   .main
     .main-header
       .main-header__group-info
@@ -31,39 +22,16 @@
           Group name
         %ul.main-header__group-info__members
           Member :
-          %li.main-header__group-info__member
-            member1
-          %li.main-header__group-info__member
-            member2
+          = render partial: "member-name"  #locals: { group: group, user: user }
       .main-header__edit-btn
         Edit
     .main-messages
-      .main-message
-        .main-message__info
-          .main-message__info__name
-            member1
-          .main-message__info__date
-            2019/01/01(Wed) 19:00:00
-        .main-message__text
-          コメント、コメント、コメント、コメント、コメント、コメント、コメント、コメント
-        .main-message__image
-      .main-message
-        .main-message__info
-          .main-message__info__name
-            member2
-          .main-message__info__date
-            2019/01/01(Wed) 20:00:00
-        .main-message__text
-          コメント、コメント、コメント、コメント、コメント、コメント、コメント、コメント
-        .main-message__image
+      = render partial: "main-message"  #locals: { message: message }
     .main-form
-      .main-form__message
-        .main-form__message__text
-          // 入力フォームに変更
-          Type a message
-        =link_to "/", class: "main-form__message__image" do
-          = fa_icon 'image', class: "main-form__message__image--icon"
-      .main-form__send-btn
-        Send
-
-
+      %form{class: "main-form__message"}
+        .main-form__message__box
+          %input.main-form__message__box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}
+          %label.main-form__message__box__image{for: "main-form__message__box__image__file"}
+            = fa_icon "image", class: "main-form__message__box__image__icon"
+            %input.main-form__message__box__image__file{id: "main-form__message__box__image__file", :name => "message[image]", :type => "file"}
+        %button.main-form__message__send-btn{:type => "submit"} Send
