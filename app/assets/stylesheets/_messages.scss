@@ -64,7 +64,6 @@ $light-blue: #38aef0;
     height: 100vh;
     width: calc( 100vw - 300px );
     &-header {
-      // 仮の高さ
       height: 100px;
       padding: 0 40px;
       border-bottom: 1px solid #eeeeee;
@@ -119,11 +118,6 @@ $light-blue: #38aef0;
           margin-bottom: 10px;
           font-size: 14px;
           color: #434a54;
-        }
-        &__image {
-          // imageの大きさは仮
-          height: 150px;
-          width: 200px;         
         }
       }
     }
