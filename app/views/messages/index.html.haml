@@ -30,8 +30,8 @@
     .main-form
       %form{class: "main-form__message"}
         .main-form__message__box
-          %input.main-form__message__box__text{:name => "message[content]", :placeholder => "type a message", :type => "text"}
+          %input.main-form__message__box__text{name: "message[content]", placeholder: "type a message", type: "text"}
           %label.main-form__message__box__image{for: "main-form__message__box__image__file"}
             = fa_icon "image", class: "main-form__message__box__image__icon"
-            %input.main-form__message__box__image__file{id: "main-form__message__box__image__file", :name => "message[image]", :type => "file"}
-        %button.main-form__message__send-btn{:type => "submit"} Send
+            %input.main-form__message__box__image__file{id: "main-form__message__box__image__file", name: "message[image]", type: "file"}
+        %button.main-form__message__send-btn{type: "submit"} Send
