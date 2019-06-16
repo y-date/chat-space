@@ -1,0 +1,37 @@
+.alert
+  グループを作成しました
+.contents
+  .side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name
+          User Name
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__btn
+            = link_to "/", class: "side-header__box__menu__btn__link side-header__box__menu__btn__link--make-group" do
+              = fa_icon "edit", class: "side-header__box__menu__btn__link--make-group-icon"
+          %li.side-header__box__menu__btn
+            = link_to "/", class: "side-header__box__menu__btn__link side-header__box__menu__btn__link--edit-account" do
+              = fa_icon "cog", class: "side-header__box__menu__btn__link--edit-account-icon"
+    .side-groups
+      = render partial: "side-group"  #locals: { group: group }
+  .main
+    .main-header
+      .main-header__group-info
+        .main-header__group-info__name
+          Group name
+        %ul.main-header__group-info__members
+          Member :
+          = render partial: "member-name"  #locals: { group: group, user: user }
+      .main-header__edit-btn
+        Edit
+    .main-messages
+      = render partial: "main-message"  #locals: { message: message }
+    .main-form
+      %form{class: "main-form__message"}
+        .main-form__message__box
+          %input.main-form__message__box__text{name: "message[content]", placeholder: "type a message", type: "text"}
+          %label.main-form__message__box__image{for: "main-form__message__box__image__file"}
+            = fa_icon "image", class: "main-form__message__box__image__icon"
+            %input.main-form__message__box__image__file{id: "main-form__message__box__image__file", name: "message[image]", type: "file"}
+        %button.main-form__message__send-btn{type: "submit"} Send
