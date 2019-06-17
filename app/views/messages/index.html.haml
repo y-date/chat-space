@@ -10,7 +10,7 @@
           - @group.users.each do |user|
             = render partial: "messages/member-name", locals: { user: user }
       .main-header__edit-btn
-        Edit
+        = link_to "Edit", edit_group_path(@group), class: "main-header__edit-btn__link"
     .main-messages
       = render @messages
     .main-form

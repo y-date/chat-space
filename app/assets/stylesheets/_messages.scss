@@ -31,8 +31,10 @@
         margin-top: 28px; 
         padding: 0 20px;
         border: 1px solid $light_blue;
-        color: $light_blue;
         line-height: 40px;
+        &__link {
+          color: $light_blue;
+        }
       }
     }
     &-messages {
