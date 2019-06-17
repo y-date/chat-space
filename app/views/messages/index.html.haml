@@ -7,16 +7,17 @@
           Group name
         %ul.main-header__group-info__members
           Member :
-          = render partial: "member-name"  #locals: { group: group, user: user }
+          - @group.users.each do |user|
+            = render partial: "messages/member-name", locals: { user: user }
       .main-header__edit-btn
         Edit
     .main-messages
-      = render partial: "main-message"  #locals: { message: message }
+      = render @messages
     .main-form
-      %form{class: "main-form__message"}
+      = form_for [@group, @message], html: { class: "main-form__message" } do |f|
         .main-form__message__box
-          %input.main-form__message__box__text{name: "message[content]", placeholder: "type a message", type: "text"}
-          %label.main-form__message__box__image{for: "main-form__message__box__image__file"}
+          = f.text_field :content, class: "main-form__message__box__text", placeholder: "type a message"
+          = f.label :image, class: "main-form__message__box__image" do
             = fa_icon "image", class: "main-form__message__box__image__icon"
-            %input.main-form__message__box__image__file{id: "main-form__message__box__image__file", name: "message[image]", type: "file"}
-        %button.main-form__message__send-btn{type: "submit"} Send
+            = f.file_field :image, class: "main-form__message__box__image__file"
+        = f.submit "Send", class: "main-form__message__send-btn"
