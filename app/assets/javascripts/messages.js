@@ -45,6 +45,7 @@ $(function() {
       $('.main-messages').append(html);
       scrollBottom();
       $('.main-form__message__box__text').val('');
+      $('.main-form__message__box__image__file').val('');
     })
 
     .fail(function() {
