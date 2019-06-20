@@ -25,10 +25,8 @@ $(function() {
     var url = $(this).attr('action');
 
     function scrollBottom() {
-      var currentPos = $('.main-messages').scrollTop();
-      var lastMsgPos = $('.main-messages > .main-message:last').offset().top;
-      var lastMsgScrollPos = currentPos + lastMsgPos;
-      $('.main-messages').animate({scrollTop: lastMsgScrollPos}, 0 );
+      var scrollH = $('.main-messages')[0].scrollHeight;
+      $('.main-messages').animate({scrollTop: scrollH}, 10 );
     }
 
     $.ajax({
@@ -43,9 +41,9 @@ $(function() {
     .done(function(message){
       var html = buildMessage(message);
       $('.main-messages').append(html);
-      scrollBottom();
       $('.main-form__message__box__text').val('');
       $('.main-form__message__box__image__file').val('');
+      scrollBottom();
     })
 
     .fail(function() {
