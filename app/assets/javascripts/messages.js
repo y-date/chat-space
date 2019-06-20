@@ -41,8 +41,7 @@ $(function() {
     .done(function(message){
       var html = buildMessage(message);
       $('.main-messages').append(html);
-      $('.main-form__message__box__text').val('');
-      $('.main-form__message__box__image__file').val('');
+      $('.main-form__message')[0].reset();
       scrollBottom();
     })
 
