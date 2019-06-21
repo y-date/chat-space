@@ -1,0 +1,6 @@
+- group.users.each do |user|
+  #chat-group-user.chat-group-user.clearfix
+    =f.text_field :user_ids, name: "group[user_ids][]", type: "hidden", value: user.id
+    %p.chat-group-user__name= user.name
+    - unless user.id == current_user.id
+      .user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn 削除
