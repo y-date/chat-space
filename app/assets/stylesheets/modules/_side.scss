@@ -30,6 +30,10 @@
     height: calc( 100vh - 100px );
     background-color: $side_blue_light;
     padding: 20px 20px 0;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      display: none;
+    }
     .side-group {
       margin-bottom: 40px;
       &__name {

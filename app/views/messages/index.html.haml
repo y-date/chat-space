@@ -4,7 +4,7 @@
     .main-header
       .main-header__group-info
         .main-header__group-info__name
-          Group name
+          = @group.name
         %ul.main-header__group-info__members
           Member :
           - @group.users.each do |user|

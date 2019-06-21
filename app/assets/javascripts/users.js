@@ -34,7 +34,7 @@ $(function() {
     var html = `<div class="chat-group-user clearfix">
                   <p class="chat-group-user__name">${msg}</p>
                 </div>`
-    userLists.append(html);         
+    userLists.append(html);
   }
 
   function appendUserToGroup(id, name) {
