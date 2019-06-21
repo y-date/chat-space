@@ -11,7 +11,6 @@ $(function() {
     };
 
     $('#chat-group-users').find('input').each(function() {
-      
       var input = parseInt($(this).attr("value"), 10);
       var userId = $.inArray(input, userIds);
 
