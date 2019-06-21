@@ -7,19 +7,19 @@
           %li= message
   .chat-group-form__field
     .chat-group-form__field--left
-      =f.label :name, "グループ名", class: "chat-group-form__label"
+      =f.label :name, "グループ名", class: "chat-group-form__field__label"
     .chat-group-form__field--right
-      =f.text_field :name, class: "chat__group_name chat-group-form__input", placeholder: "グループ名を入力してください"
+      =f.text_field :name, class: "chat__group_name chat-group-form__field__input", placeholder: "グループ名を入力してください"
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      =label :keyword, "チャットメンバーを追加", class: "chat-group-form__label", for: "chat_group_チャットメンバーを追加"
+      =label :keyword, "チャットメンバーを追加", class: "chat-group-form__field__label", for: "chat_group_チャットメンバーを追加"
     .chat-group-form__field--right
-      .chat-group-form__search.clearfix
-        =text_field :keyword, "", id: "user-search-field", class: "chat-group-form__input", placeholder: "追加したいユーザー名を入力してください"
+      .chat-group-form__field__search.clearfix
+        =text_field :keyword, "", id: "user-search-field", class: "chat-group-form__field__input", placeholder: "追加したいユーザー名を入力してください"
       #user-search-result.clearfix
   .chat-group-form__field.clearfix
     .chat-group-form__field--left
-      =f.label :user_ids, "チャットメンバー" ,class: "chat-group-form__label", for: "chat_group_チャットメンバー"
+      =f.label :user_ids, "チャットメンバー" ,class: "chat-group-form__field__label", for: "chat_group_チャットメンバー"
     .chat-group-form__field--right
       #chat-group-users
         = render partial: "chat-group-user", locals: { group: @group, f: f }
