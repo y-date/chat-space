@@ -42,6 +42,9 @@
       padding: 46px 40px 0;
       background-color: #fafafa;
       overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
       .main-message {
         margin-bottom: 40px;
         &__info {
