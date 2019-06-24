@@ -6,8 +6,8 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-
-    &__inner--left, &__inner--right {
+  
+    &--left, &--right {
       float: left;
       width: 50%;
     }
